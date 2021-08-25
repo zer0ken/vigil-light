@@ -7,7 +7,9 @@
 :root {
     font-size: 62.5%;
 
-    --y-rotation: 35deg;
+    --y-rotation: 69deg; 
+    /* -16 ~  69 */
+    
     --x-translation: -5rem;
     --z-translation: -10rem;
 }
