@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --y-rotation: 35deg;
+    --x-translation: -5rem;
+    --z-translation: -10rem;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    position: relative;
+    perspective: 65rem;
+    width: 60rem;
+    height: 40rem;
+    background: rgba(0, 0, 0, .4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    overflow: hidden;
+}
+
+#room {
+    position: relative;
+    transform-style: preserve-3d;
+    width: 80rem;
+    height: 26rem;
+    background: rgba(0, 0, 0, .4);
+
+    transform: rotateY(var(--y-rotation)) translateX(var(--x-translation)) translateZ(var(--z-translation));
+}
+
+#ceil, #floor {
+    position: relative;
+    margin-bottom: -40rem;
+    width: 80rem;
+    height: 40rem;
+}
+
+#ceil {
+    background: red;
+
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+
+#floor {
+    background: green 50%;
+
+    transform-origin: bottom;
+    top: -14rem;
+    transform: rotateX(-90deg);
+}
+
+#front-wall, #side-wall {
+    position: relative;
+    margin-bottom: -26rem;
+    width: 80rem;
+    height: 26rem;
+}
+
+#front-wall {
+    background: lightcoral;
+}
+
+#side-wall {
+    background: yellow 50%;
+
+    position: relative;
+    left: 40rem;
+    width: 40rem;
+
+    transform-origin: right;
+    transform: rotateY(90deg);
+}
+
+#door-frame {
+    background: mediumaquamarine;
+
+    padding: .8rem .8rem 0;
+
+    position: relative;
+    width: 14rem;
+    height: 100%;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#large-window {
+    background: indigo;
+
+    width: 100%;
+    height: 6rem;
+    margin-bottom: .6rem;
+}
+
+#door {
+    background: mediumvioletred;
+
+    height: 100%;
+}
+
+#small-window {
+    background: chartreuse;
+
+    position: relative;
+    left: 7rem;
+    top: 2rem;
+
+    width: 3rem;
+    height: 5rem;
+}
