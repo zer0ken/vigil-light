@@ -7,11 +7,19 @@
 :root {
     font-size: 62.5%;
 
-    --y-rotation: 69deg; 
-    /* -16 ~  69 */
-    
+    --y-rotation: 35deg;
+    /* -16 ~ 35 ~ 69 */
+
     --x-translation: -5rem;
     --z-translation: -10rem;
+
+    --door-color: rgb(112, 90, 71);
+    --front-wall-color: rgb(160, 160, 160);
+    --side-wall-color: rgb(97, 97, 97);
+    --ceil-color: rgb(179, 179, 179);
+    --floor-color: rgb(129, 129, 129);
+
+    --light: linear-gradient(180deg, red, blue);
 }
 
 body {
@@ -27,12 +35,11 @@ body {
     perspective: 65rem;
     width: 60rem;
     height: 40rem;
-    background: rgba(0, 0, 0, .4);
 
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     overflow: hidden;
 }
 
@@ -41,12 +48,13 @@ body {
     transform-style: preserve-3d;
     width: 80rem;
     height: 26rem;
-    background: rgba(0, 0, 0, .4);
 
-    transform: rotateY(var(--y-rotation)) translateX(var(--x-translation)) translateZ(var(--z-translation));
+    transform: rotateY(var(--y-rotation)) translateX(var(--x-translation))
+        translateZ(var(--z-translation));
 }
 
-#ceil, #floor {
+#ceil,
+#floor {
     position: relative;
     margin-bottom: -40rem;
     width: 80rem;
@@ -54,21 +62,22 @@ body {
 }
 
 #ceil {
-    background: red;
+    background: var(--ceil-color);
 
     transform-origin: top;
     transform: rotateX(90deg);
 }
 
 #floor {
-    background: green 50%;
+    background: var(--floor-color);
 
     transform-origin: bottom;
     top: -14rem;
     transform: rotateX(-90deg);
 }
 
-#front-wall, #side-wall {
+#front-wall,
+#side-wall {
     position: relative;
     margin-bottom: -26rem;
     width: 80rem;
@@ -76,11 +85,11 @@ body {
 }
 
 #front-wall {
-    background: lightcoral;
+    background: var(--front-wall-color);
 }
 
 #side-wall {
-    background: yellow 50%;
+    background: var(--side-wall-color);
 
     position: relative;
     left: 40rem;
@@ -90,41 +99,57 @@ body {
     transform: rotateY(90deg);
 }
 
-#door-frame {
-    background: mediumaquamarine;
-
-    padding: .8rem .8rem 0;
+#over-the-door {
+    background: var(--light);
 
     position: relative;
     width: 14rem;
     height: 100%;
     left: 50%;
+    margin-top: -26rem;
+}
+
+#door-frame {
+    background: var(--door-color);
+
+    padding: 0.8rem 0.8rem 0;
+
+    position: relative;
+    width: 14rem;
+    height: 100%;
+    left: 50%;
+    margin-right: 0;
 
     display: flex;
     flex-direction: column;
 }
 
-#large-window {
-    background: indigo;
+#door-frame *:not(#gap) {
+    border: 0.2rem solid rgba(0, 0, 0, 0.2);
+}
 
+#large-window {
     width: 100%;
     height: 6rem;
-    margin-bottom: .6rem;
+    margin-bottom: 0.6rem;
 }
 
 #door {
-    background: mediumvioletred;
+    background: var(--door-color);
 
     height: 100%;
 }
 
 #small-window {
-    background: chartreuse;
-
     position: relative;
     left: 7rem;
     top: 2rem;
 
     width: 3rem;
     height: 5rem;
+}
+
+#gap {
+    width: 100%;
+    height: 0.3rem;
 }

@@ -6,20 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
     <title>vigil-light</title>
 </head>
 
 <body>
     <div id="wrapper">
-        <div id="room"> 
+        <div id="room">
             <div id="ceil" class="pannel"></div>
             <div id="front-wall" class="pannel">
                 <div id="door-frame">
-                    <div id="large-window"></div>
+                    <div id="large-window" class="transparent"></div>
                     <div id="door">
-                        <div id="small-window"></div>
+                        <div id="small-window" class="transparent"></div>
                     </div>
+                    <div id="gap" class="transparent"></div>
                 </div>
+                <div id="over-the-door"></div>
             </div>
             <div id="side-wall"></div>
             <div id="floor" class="pannel"></div>
