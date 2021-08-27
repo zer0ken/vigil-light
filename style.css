@@ -19,7 +19,7 @@
     --ceil-color: rgb(179, 179, 179);
     --floor-color: rgb(129, 129, 129);
 
-    --light: linear-gradient(180deg, red, blue);
+    --hue: 0;
 }
 
 body {
@@ -99,16 +99,6 @@ body {
     transform: rotateY(90deg);
 }
 
-#over-the-door {
-    background: var(--light);
-
-    position: relative;
-    width: 14rem;
-    height: 100%;
-    left: 50%;
-    margin-top: -26rem;
-}
-
 #door-frame {
     background: var(--door-color);
 
@@ -125,7 +115,7 @@ body {
 }
 
 #door-frame *:not(#gap) {
-    border: 0.2rem solid rgba(0, 0, 0, 0.2);
+    border: 0.3rem solid rgb(87, 70, 57);
 }
 
 #large-window {
@@ -152,4 +142,9 @@ body {
 #gap {
     width: 100%;
     height: 0.3rem;
+}
+
+.transparent {
+    background-clip: padding-box;
+    background-color: white
 }

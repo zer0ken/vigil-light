@@ -1,19 +1,10 @@
-$(document).ready(function () {
+$(window).ready(setLight)
 
-    const points = $('.transparent').toArray()
-        .map(
-            e => ({ ...($(e).offset()), width: $(e).width(), height: $(e).height() })
-        ).map(
-            data => ([
-                data.left + ' ' + data.top,
-                (data.left + data.width) + ' ' + data.top,
-                (data.left + data.width) + ' ' + (data.top + data.height),
-                data.left + ' ' + (data.top + data.height)
-            ])
-        )
+function setLight() {
+    const hue = $(':root').css('--hue')
+    console.log(hue)
 
-    console.log(points)
-    console.log(`polygon(${points[0].join(', ')})`)
-
-    $('#over-the-door').css('clip-path', `polygon(${points[0].join(', ')})`)
-})
+    $('#large-window').css({ background: `linear-gradient(hsl(${hue}, 80%, 50%), hsl(${hue}, 60%, 40%))` })
+    $('#small-window').css({ background: `linear-gradient(hsl(${hue}, 50%, 40%), hsl(${hue}, 30%, 30%))` })
+    $('#gap').css({ background: `linear-gradient(-90deg, hsl(${hue}, 70%, 50%), hsl(${hue}, 30%, 30%))` })
+}
